@@ -5,15 +5,20 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
+import P5Wrapper from '../components/P5Wrapper';
 import Sidebar from '../components/Sidebar';
 import Tabs from '../components/Tabs';
 
 import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
+const P5Wrapper1 = P5Wrapper(0);
+
 const ExampleTemplate = ({ data, pageContext }) => {
   const [show, setShow] = useState(false);
   const intl = useIntl();
+
+  console.log(data);
 
   let json, subcategory;
 
@@ -163,6 +168,19 @@ export const query = graphql`
       filter: {
         relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
+      }
+    ) {
+      nodes {
+        name
+        internal {
+          content
+        }
+      }
+    }
+    sketch: allFile(
+      filter: {
+        relativeDirectory: { eq: $relDir }
+        extension: { regex: "/(js)/" }
       }
     ) {
       nodes {
