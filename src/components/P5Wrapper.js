@@ -1,45 +1,43 @@
 import React, { memo, useEffect, useRef } from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import p5 from 'p5';
 
-export default function (id) {
-  let canvas = null;
+import css from './P5Wrapper.module.css';
 
-  const P5Wrapper = ({ sketch = () => {}, state = {} }) => {
-    console.log(`::: P5Wrapper(${id}) component has been re-rendered`);
+let canvas = null;
 
-    const sketchContainer = useRef(null);
+const P5Wrapper = ({ sketch = () => {}, responsive }) => {
+  const wrapper = useRef(null);
 
-    useEffect(() => {
-      console.log(`::: P5Wrapper(${id})/useEffect()`);
-      canvas = new window.p5(sketch, sketchContainer.current);
-      canvas.state = state;
+  useEffect(() => {
+    canvas = new p5(sketch, wrapper.current);
+    if (responsive === true && canvas && canvas.redrawWithProps) {
+      canvas.redrawWithProps({
+        width: wrapper.current.offsetWidth,
+        height: wrapper.current.offsetHeight,
+      });
+    }
 
-      return () => {
-        console.log(`::: P5Wrapper(${id})/useEffect.return()`);
-        canvas.remove();
-      };
-    }, [sketch, state]);
+    return () => {
+      canvas.remove();
+    };
+  }, [sketch, responsive]);
 
-    return <div ref={sketchContainer} className="section"></div>;
-  };
+  return (
+    <div
+      className={classnames(css.root, { [css.responsive]: responsive })}
+      ref={wrapper}></div>
+  );
+};
 
-  P5Wrapper.propTypes = {
-    state: PropTypes.object,
+P5Wrapper.propTypes = {
+  sketch: PropTypes.func,
+};
 
-    dispatch: PropTypes.func,
-    sketch: PropTypes.func,
-  };
+P5Wrapper.defaultProps = {
+  dispatch: () => {},
+  sketch: () => {},
+};
 
-  P5Wrapper.defaultProps = {
-    state: {},
-
-    dispatch: () => {},
-    sketch: () => {},
-  };
-
-  return memo(P5Wrapper, (_, nextProps) => {
-    canvas.state = { ...nextProps.state };
-
-    return true;
-  });
-}
+export default P5Wrapper;

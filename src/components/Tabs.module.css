@@ -29,6 +29,5 @@
 }
 
 .codeBlock {
-  min-width: calc((100vw - var(--margin) * 2) / 8 * 6);
   padding-bottom: var(--gutter-double);
 }

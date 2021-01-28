@@ -1,4 +1,6 @@
-export default function (s) {
+import p5 from 'p5';
+
+const sketch = (s) => {
   class Module {
     constructor(xOff, yOff, x, y, speed, unit) {
       this.xOff = xOff;
@@ -27,8 +29,8 @@ export default function (s) {
 
     // Método personalizado para dibujar el objeto
     draw() {
-      fill(255);
-      ellipse(this.xOff + this.x, this.yOff + this.y, 6, 6);
+      s.fill(255);
+      s.ellipse(this.xOff + this.x, this.yOff + this.y, 6, 6);
     }
   }
 
@@ -37,10 +39,11 @@ export default function (s) {
   let mods = [];
 
   s.setup = () => {
-    createCanvas(720, 360);
-    noStroke();
-    let wideCount = width / unit;
-    let highCount = height / unit;
+    s.createCanvas(s.width, s.height);
+    console.log('Creating canvas');
+    s.noStroke();
+    let wideCount = s.width / unit;
+    let highCount = s.height / unit;
     count = wideCount * highCount;
 
     let index = 0;
@@ -51,7 +54,7 @@ export default function (s) {
           y * unit,
           unit / 2,
           unit / 2,
-          random(0.05, 0.8),
+          s.random(0.05, 0.8),
           unit
         );
       }
@@ -59,10 +62,12 @@ export default function (s) {
   };
 
   s.draw = () => {
-    background(0);
+    s.background(0);
     for (let i = 0; i < count; i++) {
       mods[i].update();
       mods[i].draw();
     }
   };
-}
+};
+
+export default sketch;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -8,17 +8,18 @@ import Layout from '../components/Layout';
 import P5Wrapper from '../components/P5Wrapper';
 import Sidebar from '../components/Sidebar';
 import Tabs from '../components/Tabs';
+import sketch from './ArrayObjects';
 
 import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
-const P5Wrapper1 = P5Wrapper(0);
-
 const ExampleTemplate = ({ data, pageContext }) => {
   const [show, setShow] = useState(false);
   const intl = useIntl();
-
-  console.log(data);
+  // console.log(`content/${pageContext.relDir}`);
+  // const path = `../../content/examples/${pageContext.relDir}/sketch`;
+  // const sketch1 = require(path);
+  // console.log(sketch1);
 
   let json, subcategory;
 
@@ -86,12 +87,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 </ul>
               </div>
             )}
-            <div className={classnames(css.cover, grid.col)}>
-              <img
-                src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
-                srcSet={data.image.nodes[0].childImageSharp.fluid.srcSetWebp}
-                alt=""
-              />
+            <div className={classnames(css.exampleSketch, grid.col)}>
+              <P5Wrapper sketch={sketch} responsive={true} />
             </div>
             <Tabs pdes={orderedPdes} />
             {related.length > 0 && (

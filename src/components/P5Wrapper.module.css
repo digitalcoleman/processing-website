@@ -1,0 +1,14 @@
+.root {
+  width: 100%;
+  & canvas {
+    margin: auto;
+    display: block;
+  }
+}
+
+.responsive {
+  & canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

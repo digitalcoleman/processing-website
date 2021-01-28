@@ -37,9 +37,9 @@
   flex-basis: var(--col2);
 }
 
-.cover {
-  flex-basis: var(--col7);
-  padding-left: var(--push1);
+.exampleSketch {
+  flex-basis: calc(var(--col6) + var(--col1) / 2);
+  padding-left: calc(var(--push1) * 3 / 2);
 }
 
 .relatedWrapper {
