@@ -6,12 +6,25 @@
     margin-bottom: 0;
   }
 
+  & > .author {
+    flex-basis: var(--col8);
+    padding-left: var(--push2);
+    padding-right: var(--push1);
+    margin-bottom: 0;
+  }
+
   @media (--small) {
     & > h1 {
       padding-top: var(--vertical-gutter);
       padding-left: var(--gutter);
       padding-right: var(--gutter);
     }
+    & > .author {
+      padding-top: var(--vertical-gutter);
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
     & > h3 {
       padding-right: var(--gutter);
       flex-basis: var(--col8);
