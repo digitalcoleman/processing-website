@@ -6,6 +6,7 @@
     white 20%,
     var(--processing-blue-gradient)
   );
+  position: sticky;
 }
 
 .left,

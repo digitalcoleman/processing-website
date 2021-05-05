@@ -11,7 +11,7 @@
 }
 
 .root {
-  position: relative;
+  position: sticky;
   background-color: white;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -58,7 +58,6 @@
 
 .line {
   position: relative;
-  z-index: 1;
   display: flex;
 }
 
@@ -121,12 +120,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  z-index: 1;
-}
-
-.reset:focus {
-  background-color: var(--processing-blue-dark);
-  color: white;
+  height: 30px;
 }
 
 @media (--reduced) {

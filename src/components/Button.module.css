@@ -5,10 +5,31 @@
   padding: 6px 18px;
   font-family: var(--font-mono);
   font-size: var(--text-small);
-  border-radius: 50px;
   outline: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  z-index: -1;
+  background-color: #0251c8;
+  transform: translate(3px, -3px) rotate(2deg);
+}
+
+.root:hover::before {
+  transform: translate(-7px, -7px) rotate(-4deg);
+  color: white;
 }
 
 .root:focus {
@@ -17,7 +38,6 @@
 }
 
 .root:hover {
-  background: var(--processing-blue-mid);
   color: white;
 }
 

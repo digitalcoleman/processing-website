@@ -184,7 +184,6 @@
 
 .card:active {
   border-color: var(--processing-blue-mid);
-  background: var(--processing-blue-mid);
 }
 
 .participate {
@@ -334,7 +333,12 @@
     }
   }
 
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
+    margin-bottom: var(--vertical-gutter);
+  }
+
+  .externalLinks {
     margin-bottom: var(--vertical-gutter);
   }
 }
@@ -365,30 +369,6 @@
     & a {
       margin: auto;
     }
-  }
-
-  .cardGrid {
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    & .cardCol {
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
-
-    & > .cardCol:first-child {
-      margin-bottom: var(--gutter);
-      padding-right: 0;
-    }
-
-    & > .cardCol:last-child {
-      margin-top: var(--gutter);
-      padding-left: 0;
-    }
-  }
-
-  .card {
-    height: auto;
   }
 }
 
@@ -495,13 +475,12 @@
     height: auto;
   }
 
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
     align-self: center;
   }
 
   .externalLinks {
-    margin-bottom: var(--vertical-gutter);
-
     & ul {
       columns: 1;
     }

@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  border-radius: 19px;
   height: 38px;
   width: auto;
   padding: 4px;
@@ -8,25 +7,54 @@
   background: var(--gray);
   cursor: pointer;
 
-  & > div {
+  & div:first-child {
     height: 100%;
-    border-radius: 16px;
     width: auto;
     background: var(--lightgray);
   }
 
   & span {
+    position: relative;
+    z-index: 1;
     display: inline-block;
     height: 30px;
     line-height: 24px;
     padding: 4px 12px;
-    border-radius: 16px;
+  }
+
+  & div:first-child:hover + .pressed {
+    transform: translate(0) rotate(-4deg);
+
+    & span {
+      color: white;
+    }
   }
 }
 
 .pressed {
+  position: absolute;
+  bottom: 0;
   color: white;
   background: var(--processing-blue-mid);
+  transform: translate(-3px, -4px) rotate(4deg);
+  transition: 0.5s ease;
+  height: 38px;
+}
+
+.slide0 {
+  left: 0;
+  width: 45%;
+  transition: 0.5s ease;
+}
+
+.slide1 {
+  left: 40%;
+  width: 60%;
+  transition: 0.5s ease;
+}
+
+.pressedText {
+  color: white;
 }
 
 @media (--small) {
@@ -37,5 +65,9 @@
       height: 24px;
       line-height: 18px;
     }
+  }
+
+  .pressed {
+    height: 32px;
   }
 }
