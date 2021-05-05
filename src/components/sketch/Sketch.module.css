@@ -6,7 +6,6 @@
     white 20%,
     var(--processing-blue-gradient)
   );
-  position: sticky;
 }
 
 .left,
@@ -32,6 +31,8 @@
 
 .code {
   transition: transform 0.5s;
+  position: relative;
+  z-index: 10;
 }
 
 .code.codeVisible {
