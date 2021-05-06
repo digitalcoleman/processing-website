@@ -36,21 +36,24 @@
   bottom: 0;
   color: white;
   background: var(--processing-blue-mid);
-  transform: translate(-3px, -4px) rotate(4deg);
   transition: 0.5s ease;
-  height: 38px;
+  height: 30px;
 }
 
 .slide0 {
   left: 0;
-  width: 45%;
+  width: 40%;
   transition: 0.5s ease;
+  margin-bottom: 4px;
+  margin-left: 4px;
 }
 
 .slide1 {
   left: 40%;
   width: 60%;
   transition: 0.5s ease;
+  margin-bottom: 4px;
+  margin-left: -4px;
 }
 
 .pressedText {
@@ -68,6 +71,6 @@
   }
 
   .pressed {
-    height: 32px;
+    height: 24px;
   }
 }

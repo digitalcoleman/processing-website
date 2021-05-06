@@ -37,15 +37,24 @@ const IndexPage = ({ data }) => {
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
           <p>{intl.formatMessage({ id: 'introText' })}</p>
           <div className={css.buttons}>
-            <Button to={'/download'} size="large" className={css.button}>
+            <Button
+              to={'/download'}
+              size="large"
+              type="download"
+              className={css.button}>
               {intl.formatMessage({ id: 'download' })}
             </Button>
-            <Button to={'/reference'} size="large" className={css.button}>
+            <Button
+              to={'/reference'}
+              size="large"
+              type="reference"
+              className={css.button}>
               {intl.formatMessage({ id: 'reference' })}
             </Button>
             <Button
               href={'https://processingfoundation.org/donate'}
               size="large"
+              type="donate"
               className={css.button}>
               {intl.formatMessage({ id: 'donate' })}
             </Button>
@@ -75,14 +84,17 @@ const IndexPage = ({ data }) => {
               <p>
                 {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
               </p>
-              <Button to={'/tutorials/gettingstarted'} size="small">
+              <Button
+                to={'/tutorials/gettingstarted'}
+                size="small"
+                type="tutorial">
                 {intl.formatMessage({ id: 'cardGettingStartedButton' })}
               </Button>
             </Card>
             <Card className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
               <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
-              <Button to={'/reference'} size="small">
+              <Button to={'/reference'} size="small" type="reference">
                 {intl.formatMessage({ id: 'cardReferenceButton' })}
               </Button>
             </Card>
@@ -91,14 +103,17 @@ const IndexPage = ({ data }) => {
             <Card className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
               <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
-              <Button to={'/download'} size="small">
+              <Button to={'/download'} size="small" type="download">
                 {intl.formatMessage({ id: 'cardDownloadButton' })}
               </Button>
             </Card>
             <Card className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
               <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
-              <Button href={'https://discourse.processing.org/'} size="small">
+              <Button
+                href={'https://discourse.processing.org/'}
+                size="small"
+                type="forum">
                 {intl.formatMessage({ id: 'cardForumButton' })}
               </Button>
             </Card>
@@ -117,7 +132,8 @@ const IndexPage = ({ data }) => {
               href={
                 'https://processingfoundation.org/advocacy/processing-community-day-2020'
               }
-              size="large">
+              size="large"
+              type="participate">
               {intl.formatMessage({ id: 'buttonParticipate' })}
             </Button>
           </div>
@@ -143,7 +159,10 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
           <div className={css.contributeButtton}>
-            <Button href={'https://github.com/processing'} size="large">
+            <Button
+              href={'https://github.com/processing'}
+              size="large"
+              type="contribute">
               {intl.formatMessage({ id: 'buttonContribute' })}
             </Button>
           </div>
@@ -233,7 +252,9 @@ const FeaturedExamples = memo(({ heading, examples, locale }) => {
           ))}
         </ul>
         <div className={classnames(grid.col, css.moreButton)}>
-          <Button to={'/examples'}>More Examples</Button>
+          <Button to={'/examples'} type="examples">
+            More Examples
+          </Button>
         </div>
       </div>
     </div>

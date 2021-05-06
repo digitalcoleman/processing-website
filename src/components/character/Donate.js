@@ -28,7 +28,8 @@ const Donate = () => {
       <h4>Our software can only continue with your generosity!</h4>
       <Button
         href="https://processingfoundation.org/donate"
-        className={css.donate}>
+        className={css.donate}
+        type="donate">
         Donate
       </Button>
     </div>

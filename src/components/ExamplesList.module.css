@@ -47,11 +47,11 @@
   }
 
   & ul {
-    flex-basis: var(--col8);
+    flex-basis: var(--col6);
   }
 
   & ul > li {
-    flex-basis: cols(1, 6);
+    flex-basis: cols(1, 4);
     transition: 0.2 ease;
   }
 

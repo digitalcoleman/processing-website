@@ -12,13 +12,15 @@ export const Button = ({
   size,
   color,
   target,
+  type,
   onClick,
   children,
-  tabIndex,
+  tabIndex
 }) => {
   const classNames = classnames(css.root, className, {
     [css[size]]: size,
     [css[color]]: color,
+    [css[type]]: type
   });
 
   return (
@@ -50,7 +52,7 @@ export const Button = ({
 export default Button;
 
 Button.defaultProps = {
-  onClick: () => {},
+  onClick: () => {}
 };
 
 Button.propTypes = {
@@ -59,5 +61,5 @@ Button.propTypes = {
   to: PropTypes.string,
   onClick: PropTypes.func,
   color: PropTypes.oneOf(['gray']),
-  size: PropTypes.oneOf(['large', 'small']),
+  size: PropTypes.oneOf(['large', 'small'])
 };

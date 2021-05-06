@@ -19,6 +19,11 @@
   color: var(--black);
 }
 
+.tab::before {
+  content: "";
+  background-color: transparent;
+}
+
 .active {
   background-color: var(--lightgray);
 }
