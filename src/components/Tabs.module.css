@@ -24,8 +24,18 @@
   background-color: transparent;
 }
 
+.tab:hover {
+  color: var(--black);
+  background-color: var(--lightgray);
+}
+
 .active {
   background-color: var(--lightgray);
+}
+
+.tab:focus {
+  background-color: var(--lightgray);
+  color: var(--black);
 }
 
 .code {

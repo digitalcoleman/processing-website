@@ -60,80 +60,91 @@
 /* Types */
 
 .reference::before {
-  transform: rotate(-5deg);
+  transform: translate(-5px, 5px) rotate(2deg);
+  transform-origin: 40% 50%;
 }
 
 .reference:hover::before {
-  transform: rotate(5deg);
+  transform: translate(5px, 5px) rotate(3deg);
   color: white;
+  transform-origin: 40% 50%;
 }
 
 .download::before {
-  transform: translate(-5px, -5px) rotate(2deg);
-  transform-origin: left;
+  transform: translate(-5px, 5px) rotate(2deg);
+  transform-origin: 45% 35%;
 }
 
 .download:hover::before {
-  transform: translate(3px, 3px) rotate(-4deg);
+  transform: translate(3px, 3px) rotate(4deg);
   color: white;
+  transform-origin: 45% 35%;
 }
 
 .donate::before {
-  transform: translate(5px, 5px) rotate(2deg);
-  transform-origin: right;
+  transform: translate(-4px, 4px) rotate(2deg);
+  transform-origin: 60% 70%;
 }
 
 .donate:hover::before {
-  transform: translate(-3px, -3px) rotate(-4deg);
+  transform: translate(5px, 5px) rotate(2deg);
   color: white;
+  transform-origin: 60% 70%;
 }
 
 .tutorial::before {
-  transform: translate(-5px, 5px) rotate(-2deg);
-  transform-origin: left;
+  transform: translate(2px, 3px) rotate(2deg);
+  transform-origin: 40% 30%;
 }
 
 .tutorial:hover::before {
-  transform: translate(3px, -3px) rotate(4deg);
+  transform: translate(3px, 5px) rotate(2deg);
   color: white;
+  transform-origin: 40% 30%;
 }
 
 .forum::before {
-  transform: translate(5px, -5px) rotate(-2deg);
-  transform-origin: right;
+  transform: translate(3px, 5px) rotate(2deg);
+  transform-origin: 35% 45%;
 }
 
 .forum:hover::before {
-  transform: translate(-3px, 3px) rotate(4deg);
+  transform: translate(-3px, 3px) rotate(-2deg);
   color: white;
+  transform-origin: 35% 45%;
 }
 
 .examples::before {
-  transform: translate(5px, -5px) rotate(-4deg);
-  transform-origin: right;
+  transform: translate(5px, 5px) rotate(2deg);
+  transform-origin: 35% 55%;
 }
 
 .examples:hover::before {
-  transform: translate(-5px, 5px) rotate(4deg);
+  transform: translate(-3px, 3px) rotate(-2deg);
   color: white;
+  transform-origin: 35% 55%;
 }
 
 .participate::before {
-  transform: translate(-3px, -5px) rotate(4deg);
+  transform: translate(-3px, 5px) rotate(2deg);
+  transform-origin: 55% 45%;
 }
 
 .participate:hover::before {
   transform: translate(3px, 5px) rotate(-2deg);
   color: white;
+  transform-origin: 55% 45%;
 }
 
 .contribute::before {
-  transform: translate(3px, 5px) rotate(-4deg);
+  transform: translate(-3px, 5px) rotate(1deg);
+  transform-origin: 55% 45%;
 }
 
 .contribute:hover::before {
-  transform: translate(-3px, -5px) rotate(2deg);
+  transform: translate(3px, 5px) rotate(-1deg);
   color: white;
+  transform-origin: 35% 65%;
 }
 
 @media (--medium) {
